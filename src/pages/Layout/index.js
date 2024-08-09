@@ -1,7 +1,7 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getBillList } from "@/store/mudules/billStore";
+import { getBillList } from "@/store/modules/billStore";
 import { TabBar } from "antd-mobile";
 import {
   BillOutline,
@@ -43,7 +43,7 @@ const Layout = () => {
           <Outlet /> 
         </div>
         <div className="footer">
-          <TabBar onChange={switchRouter}>
+          <TabBar onChange={switchRouter}  className="tabbar">
             {tabs.map((item) => (
               <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
             ))}
