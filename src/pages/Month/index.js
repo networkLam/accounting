@@ -10,7 +10,7 @@ const Month = () => {
   // 按月做數據的分組
   const billList = useSelector((state) => state.Bill.billList);
   const monthGroup = useMemo(() => {
-    // return出去計算后的值
+    // return出去分组后的值
     return _.groupBy(billList, (item) => dayjs(item.date).format("YYYY-MM"));
   }, [billList]);
   //控制日期选择器展示

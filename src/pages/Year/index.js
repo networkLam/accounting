@@ -1,7 +1,9 @@
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
+import { NavBar } from "antd-mobile";
 import _ from "lodash";
 import dayjs from "dayjs";
+import YearDetails from "./YearDetail";
 const Year = () => {
   const billList = useSelector((state) => state.Bill.billList);
   const yearData = useMemo(() => {
@@ -12,7 +14,7 @@ const Year = () => {
   // 得到年份的key
   const Year = Object.keys(yearData);
   const temp_arr = [];
-  Year.map((item) => {
+  Year.forEach((item) => {
     // 根据当前的年份按月分组 返回值是一个对象
     const month = _.groupBy(yearData[item], (item) =>
       dayjs(item.date).format("YYYY-MM")
@@ -41,20 +43,16 @@ const Year = () => {
   const temp_order = _.orderBy(temp_arr, ["month_log"], ["asc"]);
   //对排序好的数组再分组
   const again_group = _.groupBy(temp_order, (item) => dayjs(item.month_log).format("YYYY")) 
-  const show = (data)=>{
-    return data.map((item)=>{
-      return <div key={item.month_log}> {dayjs(item.month_log).format("MM")} {item.pay} {item.income} {item.surplus}</div>
-    })
-  }
-
   return (
-    <div>
+    <div style={{height:"618px"}}>
       <div>
+      <NavBar className="nav" backArrow={false}>
+        年度收支
+      </NavBar>
         {Year.map((year) => {
           return (
             <div key={year}>
-              <div>{ year +'年' }</div>
-               {show(again_group[year])}
+              <YearDetails year={year} MonthDetail={again_group[year]}/>
             </div>
           );
         })}
