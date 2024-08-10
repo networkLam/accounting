@@ -1,11 +1,11 @@
 .monthlyBill {
-    --ka-text-color: #191d26;
+    --lam-text-color: #191d26;
     height: 100%;
     background: linear-gradient(180deg, #ffffff, #f5f5f5 100%);
     background-size: 100% 240px;
     background-repeat: no-repeat;
     background-color: rgba(245, 245, 245, 0.9);
-    color: var(--ka-text-color);
+    color: var(--lam-text-color);
   
     .nav {
       --adm-font-size-10: 16px;
@@ -46,6 +46,7 @@
             margin-left: 9px;
             border-top: 2px solid #121826;
             border-left: 2px solid #121826;
+            background: url('http://localhost:3000/point.svg');
             transform: rotate(225deg);
             transform-origin: center;
             transition: all 0.3s;
@@ -87,30 +88,31 @@
   .oneLineOverview {
     display: flex;
     justify-content: space-between;
-
+    font-size: 22px;
     .pay {
       flex: 1;
+      padding-left: 10px;
       .type {
-        font-size: 10px;
+        font-size: 14px;
         margin-right: 2.5px;
         color: #e56a77;
       }
       .money {
         color: var(--ka-text-color);
-        font-size: 13px;
+        font-size: 17px;
       }
     }
 
     .income {
       flex: 1;
       .type {
-        font-size: 10px;
+        font-size: 14px;
         margin-right: 2.5px;
         color: #4f827c;
       }
       .money {
         color: var(--ka-text-color);
-        font-size: 13px;
+        font-size: 17px;
       }
     }
 
@@ -125,7 +127,7 @@
         font-size: 17px;
       }
       .type {
-        font-size: 10px;
+        font-size: 14px;
         color: var(--ka-text-color);
       }
     }

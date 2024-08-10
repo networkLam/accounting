@@ -1,4 +1,4 @@
-import { Button, DatePicker, Input, NavBar } from 'antd-mobile'
+import { Button, DatePicker, Input, NavBar,Toast } from 'antd-mobile'
 import Icon from '@/components/Icon'
 import './index.scss'
 import classNames from 'classnames'
@@ -34,6 +34,9 @@ const New = () => {
     }
     console.log(data)
     dispatch(addBillList(data))
+    Toast.show({
+      content: '保存成功！',
+    })
   }
   // 存储选择的时间
   const [date, setDate] = useState()

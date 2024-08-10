@@ -1,11 +1,10 @@
 import dayjs from "dayjs";
-
+import './index.scss'
 import { useMemo, useState } from "react";
 import classNames from "classnames";
 import { List } from "antd-mobile";
 const YearDetails = ({ year, MonthDetail }) => {
   const [visible, setVisible] = useState(false);
-
   const monthData = useMemo(() => {
     // 计算当年的收入支出情况
     const pay = MonthDetail.reduce((a, c) => a + c.pay, 0);
@@ -21,7 +20,7 @@ const YearDetails = ({ year, MonthDetail }) => {
     <div className={classNames("dailyBill", "expand")}>
       <div className="header">
         <div className="dateIcon" onClick={() => setVisible(!visible)}>
-          <span className="date">{year}</span>
+          <span className="date">{year+'年度'}</span>
           {/* expand 有这个类名 展开的箭头朝上的样子 */}
           <span className={classNames("arrow", visible && "expand")}></span>
         </div>

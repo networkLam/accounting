@@ -87,3 +87,20 @@
   display: flex;
   justify-content: space-between;
 }
+
+.arrow {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-top: -3px;
+  margin-left: 9px;
+  border-top: 2px solid #121826;
+  border-left: 2px solid #121826;
+  background: url('http://localhost:3000/point.svg');
+  transform: rotate(225deg);
+  transform-origin: center;
+  transition: all 0.3s;
+}
+.arrow.expand {
+  transform: translate(0, 2px) rotate(45deg);
+}

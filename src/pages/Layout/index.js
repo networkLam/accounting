@@ -42,7 +42,7 @@ const Layout = () => {
             {/* 二级路由出口 */}
           <Outlet /> 
         </div>
-        <div className="footer">
+        <div className="footer" style={{position:"fixed",width:"100%",bottom:"0",marginTop:"30px"}}>
           <TabBar onChange={switchRouter}  className="tabbar">
             {tabs.map((item) => (
               <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
